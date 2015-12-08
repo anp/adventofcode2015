@@ -2,10 +2,33 @@ use std::collections::HashMap;
 
 pub fn solve_part_one(input: &str) {
     let instructions: Vec<&str> = input.lines().collect();
-
-    let mut wires: HashMap<&str, &str> = HashMap::new();
+    
     let mut wire_values: HashMap<&str, u16> = HashMap::new();
+    let wires = build_wire_table(instructions);
+    
+    let final_signal = get_wire_signal("a", &wires, &mut wire_values);
+    println!("Bobby's kit has a signal of {} on wire a.", final_signal);
+}
 
+pub fn solve_part_two(input: &str) {
+    let instructions: Vec<&str> = input.lines().collect();
+    
+    let mut wires = build_wire_table(instructions);
+    let mut wire_values: HashMap<&str, u16> = HashMap::new();
+    
+    let intmd_signal = get_wire_signal("a", &wires, &mut wire_values);
+    println!("Got initial signal for a of {}.", &intmd_signal);
+    
+    wires.remove("b");
+    wire_values.clear();
+    wire_values.insert("b", intmd_signal);
+    
+    let final_signal = get_wire_signal("a", &wires, &mut wire_values);
+    println!("After some malicious interference, Bobby's kit has a signal of {} on a.", final_signal);
+}
+
+fn build_wire_table(instructions: Vec<&str>) -> HashMap<&str, &str> {
+    let mut wires: HashMap<&str, &str> = HashMap::new();
     for line in instructions {
         let tokens: Vec<&str> = line.split(" -> ").collect();
 
@@ -13,9 +36,7 @@ pub fn solve_part_one(input: &str) {
         let target = tokens[1];
         wires.insert(target, source);
     }
-
-    let final_signal = get_wire_signal("a", &wires, &mut wire_values);
-    println!("Bobby's kit has a signal of {} on wire a.", final_signal);
+    wires
 }
 
 fn get_wire_signal<'a>(wire_id: &'a str,

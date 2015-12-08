@@ -5,3 +5,4 @@ authors = ["Adam Perry <adam.n.perry@gmail.com>"]
 
 [dependencies]
 clap = "1.5.3"
+rust-crypto = "0.2.34"

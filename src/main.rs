@@ -1,4 +1,5 @@
 extern crate clap;
+extern crate crypto;
 
 use std::fs::File;
 use std::io::Read;
@@ -9,16 +10,18 @@ use clap::{Arg, App};
 mod day_one;
 mod day_two;
 mod day_three;
+mod day_four;
 
 fn main() {
     let default_path = "input";
-    let current_day = "3";
-    let current_part = "2";
+    let current_day = "4";
+    let current_part = "1";
 
     let args = App::new("adventofcode-rs")
                    .version("0.000")
                    .author("Adam Perry <adam.n.perry@gmail.com>")
-                   .about("http://adventofcode.com, in Rust stable.")
+                   .about("http://adventofcode.com, in Rust stable (1.4 at time of writing about \
+                           message).")
                    .arg(Arg::with_name("DAY")
                             .short("d")
                             .long("day")
@@ -74,7 +77,8 @@ fn main() {
         (2, 1) => day_two::solve_part_one(input),
         (2, 2) => day_two::solve_part_two(input),
         (3, 1) => day_three::solve_part_one(input),
-        (3, 2) => day_three:: solve_part_two(input),
+        (3, 2) => day_three::solve_part_two(input),
+        (4, 1) => day_four::solve_part_one(input),
         (_, _) => unimplemented!(),
     }
 }

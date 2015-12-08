@@ -7,10 +7,11 @@ use std::path::PathBuf;
 use clap::{Arg, App};
 
 mod day_one;
+mod day_two;
 
 fn main() {
     let default_path = "input";
-    let current_day = "1";
+    let current_day = "2";
     let current_part = "1";
     
     let args = App::new("adventofcode-rs")
@@ -67,6 +68,7 @@ fn main() {
     match (day, part) {
         (1, 1) => day_one::solve_part_one(input),
         (1, 2) => day_one::solve_part_two(input),
+        (2, 1) => day_two::solve_part_one(input),
         (_, _) => unimplemented!(),
     }
 }

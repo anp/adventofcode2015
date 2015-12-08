@@ -1,6 +1,6 @@
 extern crate clap;
 
-use clap::{Arg, App, SubCommand};
+use clap::{Arg, App};
 
 fn main() {
     let args = App::new("adventofcode-rs")

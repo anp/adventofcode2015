@@ -18,7 +18,7 @@ fn main() {
     let args = App::new("adventofcode-rs")
                    .version("0.000")
                    .author("Adam Perry <adam.n.perry@gmail.com>")
-                   .about("http://adventofcode.com")
+                   .about("http://adventofcode.com, in Rust stable.")
                    .arg(Arg::with_name("DAY")
                             .short("d")
                             .long("day")
@@ -57,7 +57,7 @@ fn main() {
     }
 
     let mut input_path = PathBuf::from(entered_path);
-    input_path.push(format!("{}-{}", day, part));
+    input_path.push(format!("{}", day));
 
     println!("Reading challenge input from {}", input_path.display());
 

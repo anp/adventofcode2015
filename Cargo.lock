@@ -3,6 +3,7 @@ name = "adventofcode2015"
 version = "0.1.0"
 dependencies = [
  "clap 1.5.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "permutohedron 0.1.7 (registry+https://github.com/rust-lang/crates.io-index)",
  "rust-crypto 0.2.34 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
@@ -62,6 +63,11 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 [[package]]
 name = "libc"
 version = "0.2.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "permutohedron"
+version = "0.1.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]

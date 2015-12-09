@@ -1,5 +1,6 @@
 extern crate clap;
 extern crate crypto;
+extern crate permutohedron;
 
 use std::fs::File;
 use std::io::Read;
@@ -15,10 +16,11 @@ mod day_five;
 mod day_six;
 mod day_seven;
 mod day_eight;
+mod day_nine;
 
 fn main() {
     let default_path = "input";
-    let current_day = "8";
+    let current_day = "9";
     let current_part = "2";
 
     let args = App::new("adventofcode-rs")
@@ -92,6 +94,8 @@ fn main() {
         (7, 2) => day_seven::solve_part_two(input),
         (8, 1) => day_eight::solve_part_one(input),
         (8, 2) => day_eight::solve_part_two(input),
+        (9, 1) => day_nine::solve_part_one(input),
+        (9, 2) => day_nine::solve_part_two(input),
         (_, _) => unimplemented!(),
     }
 }

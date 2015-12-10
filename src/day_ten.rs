@@ -9,6 +9,17 @@ pub fn solve_part_one(input: &str) {
              result.len());
 }
 
+pub fn solve_part_two(input: &str) {
+    let mut result = input.to_string();
+
+    for _ in 0..50 {
+        result = look_and_say(&result);
+    }
+
+    println!("Look-and-say 50x over produces a string of {} characters.",
+             result.len());
+}
+
 fn look_and_say(input: &str) -> String {
     let mut buf = String::new();
 

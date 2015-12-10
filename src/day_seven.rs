@@ -80,12 +80,12 @@ fn get_wire_signal<'a>(wire_id: &'a str,
 
             let lhs = match lhs_str.parse::<u16>() {
                 Ok(n) => n, // integer operand
-                Err(why) => get_wire_signal(&lhs_str, &wires, &mut found_values), //wire operand
+                Err(_) => get_wire_signal(&lhs_str, &wires, &mut found_values), //wire operand
             };
 
             let rhs = match rhs_str.parse::<u16>() {
                 Ok(n) => n, // integer operand
-                Err(why) => get_wire_signal(&rhs_str, &wires, &mut found_values), // wire operand
+                Err(_) => get_wire_signal(&rhs_str, &wires, &mut found_values), // wire operand
             };
 
             match op {

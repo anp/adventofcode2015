@@ -23,7 +23,7 @@ mod day_eleven;
 fn main() {
     let default_path = "input";
     let current_day = "11";
-    let current_part = "1";
+    let current_part = "2";
 
     let args = App::new("adventofcode-rs")
                    .version("0.000")
@@ -101,6 +101,7 @@ fn main() {
         (10, 1) => day_ten::solve_part_one(input),
         (10, 2) => day_ten::solve_part_two(input),
         (11, 1) => day_eleven::solve_part_one(input),
+        (11, 2) => day_eleven::solve_part_two(input),
         (_, _) => unimplemented!(),
     }
 }

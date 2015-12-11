@@ -9,6 +9,23 @@ pub fn solve_part_one(input: &str) {
              decode_password(&array));
 }
 
+pub fn solve_part_two(input: &str) {
+    let mut array = encode_password(input);
+
+    while !password_is_valid(&array) {
+        array = increment_password(array);
+    }
+    
+    array = increment_password(array);
+    
+    while !password_is_valid(&array) {
+        array = increment_password(array);
+    }
+
+    println!("Santa's next password will be \"{}\"",
+             decode_password(&array));
+}
+
 fn password_is_valid(password: &[u8; 8]) -> bool {
     let mut has_straight = false;
     let mut has_confusion = false;

@@ -28,7 +28,7 @@ mod day_fifteen;
 fn main() {
     let default_path = "input";
     let current_day = "15";
-    let current_part = "1";
+    let current_part = "2";
 
     let args = App::new("adventofcode-rs")
                    .version("0.000")
